@@ -3,13 +3,13 @@ import apiClient from './apiClient';
 export const authApi = {
   // Login
   login: async (email: string, password: string) => {
-    const response = await apiClient.post('/auth/login', { email, password });
+    const response = await apiClient.post('/api/auth/login', { email, password });
     return response.data;
   },
 
   // Register
   register: async (data: { name: string; email: string; password: string }) => {
-    const response = await apiClient.post('/auth/register', data);
+    const response = await apiClient.post('/api/auth/register', data);
     return response.data;
   },
 
