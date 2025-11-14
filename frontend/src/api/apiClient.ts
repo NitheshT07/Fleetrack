@@ -1,6 +1,9 @@
 import axios from 'axios';
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+const BASE_URL = import.meta.env.VITE_API_URL;
+
+axios.post(`${BASE_URL}/api/auth/login`)
+
 
 const apiClient = axios.create({
   baseURL: API_URL,
