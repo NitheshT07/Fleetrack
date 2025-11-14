@@ -1,5 +1,4 @@
 const BASE_URL = import.meta.env.VITE_API_URL;
-
 export const API = {
   getVehicles: () =>
     fetch(`${BASE_URL}/api/vehicles`).then(res => res.json()),
