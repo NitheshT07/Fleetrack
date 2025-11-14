@@ -3,7 +3,7 @@ import apiClient from './apiClient';
 export const dashboardApi = {
   // Get dashboard statistics
   getStats: async () => {
-    const response = await apiClient.get('/dashboard');
+    const response = await apiClient.get('/api/dashboard');
     return response.data;
   },
 };

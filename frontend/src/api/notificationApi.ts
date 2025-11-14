@@ -3,7 +3,7 @@ import apiClient from './apiClient';
 export const notificationApi = {
   // Get all notifications for current user
   getAll: async (userId?: string) => {
-    const response = await apiClient.get('/notifications', {
+    const response = await apiClient.get('/api/notifications', {
       params: userId ? { userId } : {},
     });
     return response.data;
@@ -11,13 +11,13 @@ export const notificationApi = {
 
   // Mark notification as read
   markAsRead: async (notificationId: string) => {
-    const response = await apiClient.put(`/notifications/${notificationId}/read`);
+    const response = await apiClient.put(`/api/notifications/${notificationId}/read`);
     return response.data;
   },
 
   // Mark all notifications as read
   markAllAsRead: async (userId?: string) => {
-    const response = await apiClient.put('/notifications/read-all', null, {
+    const response = await apiClient.put('/api/notifications/read-all', null, {
       params: userId ? { userId } : {},
     });
     return response.data;
@@ -25,7 +25,7 @@ export const notificationApi = {
 
   // Delete notification
   delete: async (notificationId: string) => {
-    const response = await apiClient.delete(`/notifications/${notificationId}`);
+    const response = await apiClient.delete(`/api/notifications/${notificationId}`);
     return response.data;
   },
 };

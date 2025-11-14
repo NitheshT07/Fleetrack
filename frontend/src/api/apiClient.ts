@@ -14,8 +14,8 @@ const apiClient = axios.create({
 apiClient.interceptors.request.use(
   (config) => {
     const isAuthEndpoint =
-      config.url?.includes("/auth/login") ||
-      config.url?.includes("/auth/register");
+      config.url?.includes("/api/auth/login") ||
+      config.url?.includes("/api/auth/register");
 
     if (!isAuthEndpoint) {
       const token =

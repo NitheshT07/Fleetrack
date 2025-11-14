@@ -7,13 +7,13 @@ import apiClient from './apiClient';
 export const tripApi = {
   // Get all trips
   getAll: async () => {
-    const response = await apiClient.get('/tracks');
+    const response = await apiClient.get('/api/tracks');
     return response.data;
   },
 
   // Get trip by ID
   getById: async (id: string) => {
-    const response = await apiClient.get(`/tracks/${id}`);
+    const response = await apiClient.get(`/api/tracks/${id}`);
     return response.data;
   },
 };
